@@ -10,31 +10,22 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Table
+@Table("user_profile")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class User {
+public class UserProfile {
 
   @Id
-  private String id;
-
-  @Column("first_name")
-  private String firstName;
-
-  @Column("last_name")
-  private String lastName;
-
-  private String username;
-
-  private String bio;
-
-  @Column("image_url")
-  private String imageUrl;
+  private Long id;
 
   @Column("cards_authored")
   private List<String> cardsAuthored;
 
   @Column("decks_authored")
   private List<String> decksAuthored;
+
+  private List<Long> followers;
+
+  private List<Long> following;
 }
